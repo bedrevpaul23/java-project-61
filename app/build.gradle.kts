@@ -6,6 +6,7 @@
  */
 
 plugins {
+    id("org.sonarqube") version "7.3.0.8198"
     checkstyle
     // Apply the application plugin to add support for building a CLI application in Java.
     application
@@ -45,4 +46,11 @@ tasks.named<Test>("test") {
 
 tasks.named<JavaExec>("run") {
     standardInput = System.`in`
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "bedrevpaul23_java-project-61")
+        property("sonar.organization", "bedrevpaul23")
+    }
 }
