@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 class AppTest {
     @Test
     void appRunsWithoutErrors() {
-        String input = "Pavel\n";
+        String input = "0\n";
         System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
 
         assertDoesNotThrow(() -> App.main(new String[]{}));
