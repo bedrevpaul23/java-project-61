@@ -39,5 +39,13 @@ class AppTest {
 
         assertDoesNotThrow(() -> App.main(new String[]{}));
     }
+
+    @Test
+    void calcGameRunsWithoutErrors() {
+        String input = "3\nPavel\nmaybe\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
 }
 

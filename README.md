@@ -17,4 +17,4 @@
 
 ### Calc game demo
 
-[![asciicast](https://asciinema.org/a/IDhi6qn69gPQqXac.svg)](https://asciinema.org/a/IDhi6qn69gPQqXac)
+[Calc asciinema demo](https://asciinema.org/a/IDhi6qn69gPQqXac)
