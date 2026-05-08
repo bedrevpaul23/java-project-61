@@ -10,3 +10,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=bedrevpaul23_java-project-61&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=bedrevpaul23_java-project-61)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=bedrevpaul23_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=bedrevpaul23_java-project-61)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bedrevpaul23_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=bedrevpaul23_java-project-61)
+
+### Even game demo
+
+[![asciicast](https://asciinema.org/a/aCzhckozIcf9GsYt.svg)](https://asciinema.org/a/aCzhckozIcf9GsYt)
