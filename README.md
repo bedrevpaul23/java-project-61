@@ -18,3 +18,7 @@
 ### Calc game demo
 
 [Calc asciinema demo](https://asciinema.org/a/IDhi6qn69gPQqXac)
+
+### GCD game demo
+
+[GCD asciinema demo](https://asciinema.org/a/9jSJdRdZKEuPlLY5)
