@@ -14,3 +14,7 @@
 ### Even game demo
 
 [![asciicast](https://asciinema.org/a/aCzhckozIcf9GsYt.svg)](https://asciinema.org/a/aCzhckozIcf9GsYt)
+
+### Calc game demo
+
+[![asciicast](https://asciinema.org/a/IDhi6qn69gPQqXac.svg)](https://asciinema.org/a/IDhi6qn69gPQqXac)
