@@ -22,3 +22,7 @@
 ### GCD game demo
 
 [GCD asciinema demo](https://asciinema.org/a/9jSJdRdZKEuPlLY5)
+
+### Progression game demo
+
+[Progression asciinema demo](https://asciinema.org/a/7qxbduQGmUxpTSxm)

@@ -33,14 +33,6 @@ class AppTest {
     }
 
     @Test
-    void unknownGameRunsWithoutErrors() {
-        String input = "9\n";
-        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
-
-        assertDoesNotThrow(() -> App.main(new String[]{}));
-    }
-
-    @Test
     void calcGameRunsWithoutErrors() {
         String input = "3\nPavel\nmaybe\n";
         System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
@@ -51,6 +43,22 @@ class AppTest {
     @Test
     void gcdGameRunsWithoutErrors() {
         String input = "4\nPavel\nmaybe\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
+
+    @Test
+    void progressionGameRunsWithoutErrors() {
+        String input = "5\nPavel\nmaybe\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
+
+    @Test
+    void unknownGameRunsWithoutErrors() {
+        String input = "9\n";
         System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
 
         assertDoesNotThrow(() -> App.main(new String[]{}));
