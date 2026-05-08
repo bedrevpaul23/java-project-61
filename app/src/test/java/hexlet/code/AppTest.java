@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
@@ -63,4 +64,15 @@ class AppTest {
 
         assertDoesNotThrow(() -> App.main(new String[]{}));
     }
+
+    @Test
+    void engineRunsSuccessfulGameWithoutErrors() {
+        String input = "Pavel\n1\n2\n3\n";
+        Scanner scanner = new Scanner(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+        String[] questions = {"one", "two", "three"};
+        String[] correctAnswers = {"1", "2", "3"};
+
+        assertDoesNotThrow(() -> Engine.run("Test rules", questions, correctAnswers, scanner));
+    }
+
 }
