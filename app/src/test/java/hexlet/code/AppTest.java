@@ -31,5 +31,13 @@ class AppTest {
 
         assertDoesNotThrow(() -> App.main(new String[]{}));
     }
+
+    @Test
+    void unknownGameRunsWithoutErrors() {
+        String input = "9\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
 }
 
