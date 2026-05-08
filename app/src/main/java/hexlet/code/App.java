@@ -19,8 +19,8 @@ public class App {
         int userChoice = scanner.nextInt();
 
         switch (userChoice) {
-            case GREET_GAME -> Cli.greetUser();
-            case EVEN_GAME -> Even.run();
+            case GREET_GAME -> Cli.greetUser(scanner);
+            case EVEN_GAME -> Even.run(scanner);
             case EXIT -> System.out.println("Goodbye!");
             default -> System.out.println("Unknown game");
         }

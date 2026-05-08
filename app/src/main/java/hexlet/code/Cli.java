@@ -6,9 +6,7 @@ public final class Cli {
     private Cli() {
     }
 
-    public static void greetUser() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void greetUser(Scanner scanner) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 

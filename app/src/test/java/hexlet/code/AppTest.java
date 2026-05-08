@@ -15,4 +15,21 @@ class AppTest {
 
         assertDoesNotThrow(() -> App.main(new String[]{}));
     }
+
+    @Test
+    void greetGameRunsWithoutErrors() {
+        String input = "1\nPavel\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
+
+    @Test
+    void evenGameRunsWithoutErrors() {
+        String input = "2\nPavel\nmaybe\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
 }
+

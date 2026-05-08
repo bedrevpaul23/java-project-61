@@ -11,9 +11,7 @@ public final class Even {
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final Random RANDOM = new Random();
 
-    public static void run() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void run(Scanner scanner) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 

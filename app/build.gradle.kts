@@ -8,6 +8,7 @@
 plugins {
     id("org.sonarqube") version "7.3.0.8198"
     checkstyle
+    jacoco
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -34,6 +35,15 @@ java {
     }
 }
 
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
 application {
     // Define the main class for the application.
     mainClass = "hexlet.code.App"
@@ -42,6 +52,7 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
 }
 
 tasks.named<JavaExec>("run") {
@@ -52,5 +63,6 @@ sonar {
     properties {
         property("sonar.projectKey", "bedrevpaul23_java-project-61")
         property("sonar.organization", "bedrevpaul23")
+        property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
     }
 }
