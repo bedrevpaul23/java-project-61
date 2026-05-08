@@ -3,7 +3,10 @@ package hexlet.code;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even {
+public final class Even {
+    private Even() {
+    }
+
     private static final int ROUNDS_COUNT = 3;
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final Random RANDOM = new Random();
