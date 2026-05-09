@@ -26,3 +26,7 @@
 ### Progression game demo
 
 [Progression asciinema demo](https://asciinema.org/a/7qxbduQGmUxpTSxm)
+
+### Prime game demo
+
+[Prime asciinema demo](https://asciinema.org/a/wJK9XpW5Midfn3QC)

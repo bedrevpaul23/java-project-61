@@ -75,4 +75,12 @@ class AppTest {
         assertDoesNotThrow(() -> Engine.run("Test rules", questions, correctAnswers, scanner));
     }
 
+    @Test
+    void primeGameRunsWithoutErrors() {
+        String input = "6\nPavel\nmaybe\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+
+        assertDoesNotThrow(() -> App.main(new String[]{}));
+    }
+
 }
