@@ -13,20 +13,20 @@
 
 ### Even game demo
 
-[![asciicast](https://asciinema.org/a/aCzhckozIcf9GsYt.svg)](https://asciinema.org/a/aCzhckozIcf9GsYt)
+[Even asciinema demo](https://asciinema.org/a/up3XM8bOIU9Z034z)
 
 ### Calc game demo
 
-[Calc asciinema demo](https://asciinema.org/a/IDhi6qn69gPQqXac)
+[Calc asciinema demo](https://asciinema.org/a/i5b0995TCkhO5sZa)
 
 ### GCD game demo
 
-[GCD asciinema demo](https://asciinema.org/a/9jSJdRdZKEuPlLY5)
+[GCD asciinema demo](https://asciinema.org/a/KriHoKQSQ9Pq6Nv5)
 
 ### Progression game demo
 
-[Progression asciinema demo](https://asciinema.org/a/7qxbduQGmUxpTSxm)
+[Progression asciinema demo](https://asciinema.org/a/rWU0cYxgI3e8PDQ0)
 
 ### Prime game demo
 
-[Prime asciinema demo](https://asciinema.org/a/wJK9XpW5Midfn3QC)
+[Prime asciinema demo](https://asciinema.org/a/2KkwRRCKo8rLRUyi)
