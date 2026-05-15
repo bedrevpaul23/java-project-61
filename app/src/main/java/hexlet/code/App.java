@@ -30,6 +30,12 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
+        if (!scanner.hasNextInt()) {
+            String userChoice = scanner.next();
+            System.out.println("Unknown user choice: " + userChoice);
+            return;
+        }
+
         int userChoice = scanner.nextInt();
 
         switch (userChoice) {
@@ -40,7 +46,7 @@ public class App {
             case PROGRESSION_GAME -> Progression.run(scanner);
             case PRIME_GAME -> Prime.run(scanner);
             case EXIT -> System.out.println("Goodbye!");
-            default -> System.out.println("Unknown game");
+            default -> System.out.println("Unknown user choice: " + userChoice);
         }
     }
 }

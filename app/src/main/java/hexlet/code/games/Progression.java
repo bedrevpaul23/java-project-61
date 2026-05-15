@@ -23,41 +23,25 @@ public final class Progression {
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int start = RANDOM.nextInt(MAX_START_NUMBER) + 1;
             int step = RANDOM.nextInt(MAX_STEP) + 1;
-            int hiddenPosition = RANDOM.nextInt(PROGRESSION_LENGTH);
-            int[] progression = generateProgression(start, step);
+            int hiddenIndex = RANDOM.nextInt(PROGRESSION_LENGTH);
+            String[] progression = makeProgression(start, step, PROGRESSION_LENGTH);
 
-            questions[i] = buildQuestion(progression, hiddenPosition);
-            correctAnswers[i] = String.valueOf(progression[hiddenPosition]);
+            correctAnswers[i] = progression[hiddenIndex];
+            progression[hiddenIndex] = HIDDEN_ELEMENT;
+            questions[i] = String.join(" ", progression);
         }
 
         Engine.run(RULES, questions, correctAnswers, scanner);
     }
 
-    private static int[] generateProgression(int start, int step) {
-        int[] progression = new int[PROGRESSION_LENGTH];
+    private static String[] makeProgression(int start, int step, int length) {
+        String[] progression = new String[length];
 
         for (int i = 0; i < progression.length; i++) {
-            progression[i] = start + i * step;
+            int currentElement = start + i * step;
+            progression[i] = String.valueOf(currentElement);
         }
 
         return progression;
-    }
-
-    private static String buildQuestion(int[] progression, int hiddenPosition) {
-        StringBuilder question = new StringBuilder();
-
-        for (int i = 0; i < progression.length; i++) {
-            if (i > 0) {
-                question.append(" ");
-            }
-
-            if (i == hiddenPosition) {
-                question.append(HIDDEN_ELEMENT);
-            } else {
-                question.append(progression[i]);
-            }
-        }
-
-        return question.toString();
     }
 }

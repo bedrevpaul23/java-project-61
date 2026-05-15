@@ -13,9 +13,7 @@ public final class Engine {
                            String[] correctAnswers,
                            Scanner scanner) {
         System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-
-        String name = scanner.next();
+        String name = Cli.askName(scanner);
 
         System.out.println("Hello, " + name + "!");
         System.out.println(rules);
@@ -38,4 +36,5 @@ public final class Engine {
 
         System.out.println("Congratulations, " + name + "!");
     }
+
 }

@@ -11,6 +11,47 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=bedrevpaul23_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=bedrevpaul23_java-project-61)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bedrevpaul23_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=bedrevpaul23_java-project-61)
 
+## Описание / Description
+
+Brain Games — набор консольных игр, написанный на Java
+
+Brain Games is a set of console games built with Java
+
+Приложение предлагает пользователю выбрать игру, ввести имя и ответить на три вопроса. Если пользователь отвечает правильно на все вопросы, игра завершается победой. Если пользователь ошибается, приложение показывает правильный ответ и завершает игру
+
+The application asks the user to choose a game, enter a name, and answer three questions. If all answers are correct, the game ends with a victory. If the user gives a wrong answer, the application shows the correct answer and finishes
+
+## Игры / Games
+
+- Even — проверка числа на чётность / determine whether a number is even
+- Calc — вычисление арифметического выражения / calculate the result of an expression
+- GCD — поиск наибольшего общего делителя / find the greatest common divisor
+- Progression — поиск пропущенного числа в арифметической прогрессии / find a missing number in an arithmetic progression
+- Prime — проверка числа на простоту / determine whether a number is prime
+
+## Требования / Requirements
+
+- Java 21
+- Gradle
+- Make
+
+## Сборка / Build
+
+```bash
+cd app
+make build
+```
+
+## Запуск / Run
+
+```bash
+cd app
+./gradlew installDist
+make run-dist
+```
+
+## Демонстрация / Demo
+
 ### Even game demo
 
 [Even asciinema demo](https://asciinema.org/a/up3XM8bOIU9Z034z)
