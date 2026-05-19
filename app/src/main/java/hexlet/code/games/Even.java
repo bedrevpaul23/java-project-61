@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.security.SecureRandom;
 
 public final class Even {
-    private static final String RULES = "Answer 'yes' if the number is even, otherwise 'no'.";
+    private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final SecureRandom RANDOM = new SecureRandom();
 
