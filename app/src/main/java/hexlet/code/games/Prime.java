@@ -1,9 +1,8 @@
 package hexlet.code.games;
 
-import  hexlet.code.Engine;
+import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public final class Prime {
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -13,18 +12,17 @@ public final class Prime {
     private Prime() {
     }
 
-    public static void run(Scanner scanner) {
-        String[] questions = new String[Engine.ROUNDS_COUNT];
-        String[] correctAnswers = new String[Engine.ROUNDS_COUNT];
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][Engine.ROUND_DATA_SIZE];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
 
-            questions[i] = String.valueOf(number);
-            correctAnswers[i] = isPrime(number) ? "yes" : "no";
+            rounds[i][Engine.QUESTION_INDEX] = String.valueOf(number);
+            rounds[i][Engine.ANSWER_INDEX] = isPrime(number) ? "yes" : "no";
         }
 
-        Engine.run(RULES, questions, correctAnswers, scanner);
+        Engine.run(RULES, rounds);
     }
 
     private static boolean isPrime(int number) {

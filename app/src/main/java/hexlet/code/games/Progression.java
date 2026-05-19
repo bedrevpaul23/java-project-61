@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public final class Progression {
     private static final String RULES = "What number is missing in the progression?";
@@ -16,9 +15,8 @@ public final class Progression {
     private Progression() {
     }
 
-    public static void run(Scanner scanner) {
-        String[] questions = new String[Engine.ROUNDS_COUNT];
-        String[] correctAnswers = new String[Engine.ROUNDS_COUNT];
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][Engine.ROUND_DATA_SIZE];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int start = RANDOM.nextInt(MAX_START_NUMBER) + 1;
@@ -26,12 +24,12 @@ public final class Progression {
             int hiddenIndex = RANDOM.nextInt(PROGRESSION_LENGTH);
             String[] progression = makeProgression(start, step, PROGRESSION_LENGTH);
 
-            correctAnswers[i] = progression[hiddenIndex];
+            rounds[i][Engine.ANSWER_INDEX] = progression[hiddenIndex];
             progression[hiddenIndex] = HIDDEN_ELEMENT;
-            questions[i] = String.join(" ", progression);
+            rounds[i][Engine.QUESTION_INDEX] = String.join(" ", progression);
         }
 
-        Engine.run(RULES, questions, correctAnswers, scanner);
+        Engine.run(RULES, rounds);
     }
 
     private static String[] makeProgression(int start, int step, int length) {

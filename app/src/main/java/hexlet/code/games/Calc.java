@@ -2,42 +2,38 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.security.SecureRandom;
 
 public final class Calc {
     private static final String RULES = "What is the result of the expression?";
     private static final int MAX_RANDOM_NUMBER = 100;
-    private static final String[] OPERATIONS = {"+", "-", "*"};
-    private static final Random RANDOM = new Random();
+    private static final char[] OPERATORS = {'+', '-', '*'};
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     private Calc() {
     }
 
-    public static void run(Scanner scanner) {
-        String[] questions = new String[Engine.ROUNDS_COUNT];
-        String[] correctAnswers = new String[Engine.ROUNDS_COUNT];
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][Engine.ROUND_DATA_SIZE];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
             int secondNumber = RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
-            String operation = OPERATIONS[RANDOM.nextInt(OPERATIONS.length)];
+            char operator = OPERATORS[RANDOM.nextInt(OPERATORS.length)];
 
-            questions[i] = firstNumber + " " + operation + " " + secondNumber;
-            correctAnswers[i] = String.valueOf(
-                    calculate(firstNumber, secondNumber, operation)
-            );
+            rounds[i][Engine.QUESTION_INDEX] = firstNumber + " " + operator + " " + secondNumber;
+            rounds[i][Engine.ANSWER_INDEX] = String.valueOf(calculate(firstNumber, secondNumber, operator));
         }
 
-        Engine.run(RULES, questions, correctAnswers, scanner);
+        Engine.run(RULES, rounds);
     }
 
-    private static int calculate(int firstNumber, int secondNumber, String operation) {
-        return switch (operation) {
-            case "+" -> firstNumber + secondNumber;
-            case "-" -> firstNumber - secondNumber;
-            case "*" -> firstNumber * secondNumber;
-            default -> throw new IllegalArgumentException("Unknown operation: " + operation);
+    private static int calculate(int firstNumber, int secondNumber, char operator) {
+        return switch (operator) {
+            case '+' -> firstNumber + secondNumber;
+            case '-' -> firstNumber - secondNumber;
+            case '*' -> firstNumber * secondNumber;
+            default -> throw new IllegalArgumentException("Unknown operator: " + operator);
         };
     }
 }

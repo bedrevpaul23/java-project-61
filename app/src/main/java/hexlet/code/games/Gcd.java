@@ -2,42 +2,37 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.security.SecureRandom;
 
 public final class Gcd {
     private static final String RULES = "Find the greatest common divisor of given numbers.";
     private static final int MAX_RANDOM_NUMBER = 100;
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     private Gcd() {
     }
 
-    public static void run(Scanner scanner) {
-        String[] questions = new String[Engine.ROUNDS_COUNT];
-        String[] correctAnswers = new String[Engine.ROUNDS_COUNT];
+    public static void run() {
+        String[][] rounds = new String[Engine.ROUNDS_COUNT][Engine.ROUND_DATA_SIZE];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
             int secondNumber = RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
 
-            questions[i] = firstNumber + " " + secondNumber;
-            correctAnswers[i] = String.valueOf(findGcd(firstNumber, secondNumber));
+            rounds[i][Engine.QUESTION_INDEX] = firstNumber + " " + secondNumber;
+            rounds[i][Engine.ANSWER_INDEX] = String.valueOf(findGcd(firstNumber, secondNumber));
         }
 
-        Engine.run(RULES, questions, correctAnswers, scanner);
+        Engine.run(RULES, rounds);
     }
 
     private static int findGcd(int firstNumber, int secondNumber) {
-        int a = firstNumber;
-        int b = secondNumber;
-
-        while (b != 0) {
-            int remainder = a % b;
-            a = b;
-            b = remainder;
+        while (secondNumber != 0) {
+            int remainder = firstNumber % secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = remainder;
         }
 
-        return a;
+        return Math.abs(firstNumber);
     }
 }
