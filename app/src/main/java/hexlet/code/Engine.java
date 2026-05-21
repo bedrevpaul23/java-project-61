@@ -21,9 +21,9 @@ public final class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
 
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            String question = rounds[i][QUESTION_INDEX];
-            String correctAnswer = rounds[i][ANSWER_INDEX];
+        for (String[] round : rounds) {
+            String question = round[QUESTION_INDEX];
+            String correctAnswer = round[ANSWER_INDEX];
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");

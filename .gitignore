@@ -4,3 +4,8 @@
 *.jar
 .DS_Store
 !app/gradle/wrapper/gradle-wrapper.jar
+
+# app local files
+/app/.gradle
+/app/build
+/app/.kotlin
